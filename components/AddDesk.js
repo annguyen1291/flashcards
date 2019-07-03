@@ -4,7 +4,6 @@ import { white } from '../utils/colors'
 import { submitDesk } from '../utils/api'
 import { connect } from 'react-redux'
 import { addDesk } from '../actions'
-import { NavigationActions } from 'react-navigation'
 import SubmitBtn from './SubmitBtn'
 
 class AddDesk extends Component {
@@ -26,11 +25,7 @@ class AddDesk extends Component {
 
     this.setState(() => ({ deskTitle: '' }))
 
-    this.toHome()
-  }
-
-  toHome = () => {
-    this.props.navigation.dispatch(NavigationActions.back())
+    this.props.navigation.navigate('DeskDetail', { deskID: deskID })
   }
 
   render() {

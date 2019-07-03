@@ -23,7 +23,7 @@ class StartQuiz extends React.Component {
   submit = (correct) => {
     const { deskID, desk } = this.props
 
-    this.setState((state) => ({ ...state, card: state.card + 1, correct: state.correct + correct }))
+    this.setState((state) => ({ side: true, card: state.card + 1, correct: state.correct + correct }))
 
     if (desk.length === this.state.card + 1) {
       this.props.navigation.navigate('Result', { deskID: deskID, card: this.state.card + 1, correct: this.state.correct + correct })
